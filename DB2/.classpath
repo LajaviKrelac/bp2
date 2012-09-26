@@ -6,13 +6,20 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/EclipseLink 2.4.0 - Juno">
-		<attributes>
-			<attribute name="owner.project.facets" value="jpt.jpa"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.datatools.connectivity.jdt.DRIVERLIBRARY/Microsoft SQL Server 2008 JDBC Driver"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/DB2UserLibrary"/>
 	<classpathentry kind="lib" path="lib/sqljdbc4.jar"/>
+	<classpathentry kind="lib" path="lib/eclipselink.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/MarkoM/workspace/libraries/EclipseLink 2.4.0/eclipselink/eclipselink-javadocs.zip!/eclipselink/javadocs/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/eclipselink-jpa-modelgen_2.4.0.v20120608-r11652.jar"/>
+	<classpathentry kind="lib" path="lib/javax.persistence_2.0.4.v201112161009.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.persistence.jpars_2.4.0.v20120608-r11652.jar"/>
+	<classpathentry kind="lib" path="lib/com.sun.tools.xjc_2.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/com.sun.xml.bind_2.2.0.v201004141950.jar"/>
+	<classpathentry kind="lib" path="lib/javax.mail_1.4.0.v201005080615.jar"/>
+	<classpathentry kind="lib" path="lib/javax.xml.bind_2.2.0.v201105210648.jar"/>
+	<classpathentry kind="lib" path="lib/javax.xml.stream_1.0.1.v201004272200.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

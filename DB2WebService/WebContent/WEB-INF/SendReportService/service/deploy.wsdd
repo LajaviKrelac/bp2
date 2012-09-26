@@ -10,10 +10,18 @@
       <parameter name="className" value="service.SendReport"/>
       <parameter name="wsdlPortType" value="SendReport"/>
       <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://service" xmlns:retNS="http://service" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sendReport3" qname="operNS:sendReport3" returnQName="retNS:sendReport3Return" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:professorName" type="tns:string"/>
+        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:professorLastName" type="tns:string"/>
+      </operation>
       <operation xmlns:operNS="http://service" xmlns:retNS="http://service" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="queryReport" qname="operNS:queryReport" returnQName="retNS:queryReportReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:predmet" type="tns:string"/>
         <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ocena" type="tns:int"/>
         <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:sifra" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://service" xmlns:retNS="http://service" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="zbir" qname="operNS:zbir" returnQName="retNS:zbirReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:a" type="tns:int"/>
+        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:b" type="tns:int"/>
       </operation>
       <operation xmlns:operNS="http://service" xmlns:retNS="http://service" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sendReport1" qname="operNS:sendReport1" returnQName="retNS:sendReport1Return" returnType="rtns:int" soapAction="">
         <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:professorId" type="tns:int"/>
@@ -22,11 +30,7 @@
         <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:professorId" type="tns:int"/>
         <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:report" type="tns:string"/>
       </operation>
-      <operation xmlns:operNS="http://service" xmlns:retNS="http://service" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sendReport3" qname="operNS:sendReport3" returnQName="retNS:sendReport3Return" returnType="rtns:int" soapAction="">
-        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:professorName" type="tns:string"/>
-        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:professorLastName" type="tns:string"/>
-      </operation>
-      <parameter name="allowedMethods" value="queryReport sendReport1 sendReport3 sendReport2"/>
+      <parameter name="allowedMethods" value="zbir queryReport sendReport1 sendReport3 sendReport2"/>
 
   </service>
 </deployment>

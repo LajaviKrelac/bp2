@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -29,28 +29,32 @@
   <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
  </ns1:service>
  <ns1:service name="SendReport" provider="java:RPC" style="wrapped" use="literal">
-  <ns2:operation name="queryReport" qname="ns1:queryReport" returnQName="ns1:queryReportReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
-   <ns2:parameter qname="ns1:predmet" type="xsd:string"/>
-   <ns2:parameter qname="ns1:ocena" type="xsd:int"/>
-   <ns2:parameter qname="ns1:sifra" type="xsd:int"/>
+  <ns2:operation name="sendReport3" qname="ns1:sendReport3" returnQName="ns1:sendReport3Return" returnType="xsd:int" soapAction="" xmlns:ns1="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:professorName" type="xsd:string"/>
+   <ns2:parameter qname="ns1:professorLastName" type="xsd:string"/>
   </ns2:operation>
-  <ns1:operation name="sendReport1" qname="ns2:sendReport1" returnQName="ns2:sendReport1Return" returnType="xsd:int" soapAction="" xmlns:ns2="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns2:professorId" type="xsd:int"/>
+  <ns1:operation name="queryReport" qname="ns2:queryReport" returnQName="ns2:queryReportReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:predmet" type="xsd:string"/>
+   <ns1:parameter qname="ns2:ocena" type="xsd:int"/>
+   <ns1:parameter qname="ns2:sifra" type="xsd:int"/>
   </ns1:operation>
-  <ns1:operation name="sendReport2" qname="ns3:sendReport2" returnQName="ns3:sendReport2Return" returnType="xsd:int" soapAction="" xmlns:ns3="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns3:professorId" type="xsd:int"/>
-   <ns1:parameter qname="ns3:report" type="xsd:string"/>
+  <ns1:operation name="zbir" qname="ns3:zbir" returnQName="ns3:zbirReturn" returnType="xsd:int" soapAction="" xmlns:ns3="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns3:a" type="xsd:int"/>
+   <ns1:parameter qname="ns3:b" type="xsd:int"/>
   </ns1:operation>
-  <ns1:operation name="sendReport3" qname="ns4:sendReport3" returnQName="ns4:sendReport3Return" returnType="xsd:int" soapAction="" xmlns:ns4="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns4:professorName" type="xsd:string"/>
-   <ns1:parameter qname="ns4:professorLastName" type="xsd:string"/>
+  <ns1:operation name="sendReport1" qname="ns4:sendReport1" returnQName="ns4:sendReport1Return" returnType="xsd:int" soapAction="" xmlns:ns4="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:professorId" type="xsd:int"/>
   </ns1:operation>
-  <ns1:parameter name="allowedMethods" value="queryReport sendReport1 sendReport3 sendReport2"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:operation name="sendReport2" qname="ns5:sendReport2" returnQName="ns5:sendReport2Return" returnType="xsd:int" soapAction="" xmlns:ns5="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns5:professorId" type="xsd:int"/>
+   <ns1:parameter qname="ns5:report" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="zbir queryReport sendReport1 sendReport3 sendReport2"/>
   <ns1:parameter name="wsdlPortType" value="SendReport"/>
-  <ns1:parameter name="className" value="service.SendReport"/>
-  <ns1:parameter name="wsdlServicePort" value="SendReport"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://service"/>
+  <ns1:parameter name="wsdlServicePort" value="SendReport"/>
+  <ns1:parameter name="className" value="service.SendReport"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://service"/>
   <ns1:parameter name="wsdlServiceElement" value="SendReportService"/>
  </ns1:service>

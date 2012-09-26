@@ -29,16 +29,18 @@ public class DBTest {
 			PropertyConfigurator.configure("../log4j.properties");
 		}
 		PropertyConfigurator.configure("log4j.properties");
-
+		System.out.println("1");
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("DB2");
+		System.out.println("1");
 	    EntityManager em = emf.createEntityManager();
+	    System.out.println("2");
 	    ProfessorService service = new ProfessorService(em);
 
 //	    em.getTransaction().begin();
 //	    Professor emp = service.createProfessor("Milos", "Cvetanovic");
 //	    em.getTransaction().commit();
 //	    System.out.println("Persisted " + emp);
-
+	    System.out.println("3");
 	    em.getTransaction().begin();
 	    Collection<Professor> emps = service.findAllProfessors();
 	    for (Professor e : emps)

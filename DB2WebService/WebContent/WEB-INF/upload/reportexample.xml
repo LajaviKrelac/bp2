@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<report>
+<id>2134</id>
+    
+<course>
+	<id>123</id>
+	<name>Math</name>
+
+	<students>
+		<student>
+	    	<id>123</id>
+	  		<name>Milos</name>
+	  		<lastname>Cvetanovic</lastname>
+	 		<mark>5</mark>
+	    </student>
+	    
+		<student>
+	    	<id>123</id>
+	  		<name>Milos</name>
+	  		<lastname>Cvetanovic</lastname>
+	 		<mark>5</mark>
+	    </student>
+	</students>
+
+</course>
+</report>

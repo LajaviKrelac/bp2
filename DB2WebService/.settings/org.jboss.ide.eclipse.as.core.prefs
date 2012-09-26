@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-org.jboss.ide.eclipse.as.core.singledeployable.deployableList=WebContent/wsdl/SendReport.wsdl\n
+org.jboss.ide.eclipse.as.core.singledeployable.deployableList=log\nWebContent/wsdl/SendReport.wsdl\nlog/debug.log\nlog4j.properties\nlog/error.log\nlog/info.log\n

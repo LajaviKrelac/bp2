@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions targetNamespace="http://service" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service" xmlns:intf="http://service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions targetNamespace="http://DefaultNamespace" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://DefaultNamespace" xmlns:intf="http://DefaultNamespace" xmlns:tns1="http://log4j.apache.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <!--WSDL created by Apache Axis version: 1.4
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
-  <schema elementFormDefault="qualified" targetNamespace="http://service" xmlns="http://www.w3.org/2001/XMLSchema">
+  <schema elementFormDefault="qualified" targetNamespace="http://DefaultNamespace" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://log4j.apache.org"/>
+   <element name="configure">
+    <complexType/>
+   </element>
+   <element name="configureResponse">
+    <complexType>
+     <sequence>
+      <element name="configureReturn" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendReport3">
+    <complexType>
+     <sequence>
+      <element name="professorName" type="xsd:string"/>
+      <element name="professorLastName" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendReport3Response">
+    <complexType>
+     <sequence>
+      <element name="sendReport3Return" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="queryReport">
     <complexType>
      <sequence>
@@ -17,6 +43,21 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="queryReportReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="zbir">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="zbirResponse">
+    <complexType>
+     <sequence>
+      <element name="zbirReturn" type="xsd:int"/>
      </sequence>
     </complexType>
    </element>
@@ -49,24 +90,48 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="sendReport3">
-    <complexType>
-     <sequence>
-      <element name="professorName" type="xsd:string"/>
-      <element name="professorLastName" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="sendReport3Response">
-    <complexType>
-     <sequence>
-      <element name="sendReport3Return" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-            <element name="asd" type="string"></element>
-        </schema>
+  </schema>
  </wsdl:types>
+
+   <wsdl:message name="zbirResponse">
+
+      <wsdl:part element="impl:zbirResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendReport3Request">
+
+      <wsdl:part element="impl:sendReport3" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryReportRequest">
+
+      <wsdl:part element="impl:queryReport" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="configureRequest">
+
+      <wsdl:part element="impl:configure" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="zbirRequest">
+
+      <wsdl:part element="impl:zbir" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
 
    <wsdl:message name="sendReport2Response">
 
@@ -100,9 +165,9 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="sendReport1Request">
+   <wsdl:message name="configureResponse">
 
-      <wsdl:part element="impl:sendReport1" name="parameters">
+      <wsdl:part element="impl:configureResponse" name="parameters">
 
       </wsdl:part>
 
@@ -116,23 +181,39 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="queryReportRequest">
+   <wsdl:message name="sendReport1Request">
 
-      <wsdl:part element="impl:queryReport" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="sendReport3Request">
-
-      <wsdl:part element="impl:sendReport3" name="parameters">
+      <wsdl:part element="impl:sendReport1" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
    <wsdl:portType name="SendReport">
+
+      <wsdl:operation name="configure">
+
+         <wsdl:input message="impl:configureRequest" name="configureRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:configureResponse" name="configureResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendReport3">
+
+         <wsdl:input message="impl:sendReport3Request" name="sendReport3Request">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sendReport3Response" name="sendReport3Response">
+
+       </wsdl:output>
+
+      </wsdl:operation>
 
       <wsdl:operation name="queryReport">
 
@@ -141,6 +222,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:queryReportResponse" name="queryReportResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="zbir">
+
+         <wsdl:input message="impl:zbirRequest" name="zbirRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:zbirResponse" name="zbirResponse">
 
        </wsdl:output>
 
@@ -170,23 +263,47 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="sendReport3">
-
-         <wsdl:input message="impl:sendReport3Request" name="sendReport3Request">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:sendReport3Response" name="sendReport3Response">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
    </wsdl:portType>
 
    <wsdl:binding name="SendReportSoapBinding" type="impl:SendReport">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="configure">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="configureRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="configureResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendReport3">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sendReport3Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sendReport3Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
 
       <wsdl:operation name="queryReport">
 
@@ -199,6 +316,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="queryReportResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="zbir">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="zbirRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="zbirResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -235,24 +370,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="sendReport2Response">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="sendReport3">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="sendReport3Request">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="sendReport3Response">
 
             <wsdlsoap:body use="literal"/>
 
