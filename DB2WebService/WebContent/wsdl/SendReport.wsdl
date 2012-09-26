@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service" xmlns:intf="http://service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="queryReport">
+    <complexType>
+     <sequence>
+      <element name="predmet" type="xsd:string"/>
+      <element name="ocena" type="xsd:int"/>
+      <element name="sifra" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="queryReportResponse">
+    <complexType>
+     <sequence>
+      <element name="queryReportReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendReport1">
+    <complexType>
+     <sequence>
+      <element name="professorId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendReport1Response">
+    <complexType>
+     <sequence>
+      <element name="sendReport1Return" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendReport2">
+    <complexType>
+     <sequence>
+      <element name="professorId" type="xsd:int"/>
+      <element name="report" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendReport2Response">
+    <complexType>
+     <sequence>
+      <element name="sendReport2Return" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendReport3">
+    <complexType>
+     <sequence>
+      <element name="professorName" type="xsd:string"/>
+      <element name="professorLastName" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendReport3Response">
+    <complexType>
+     <sequence>
+      <element name="sendReport3Return" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+            <element name="asd" type="string"></element>
+        </schema>
+ </wsdl:types>
+
+   <wsdl:message name="sendReport2Response">
+
+      <wsdl:part element="impl:sendReport2Response" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendReport2Request">
+
+      <wsdl:part element="impl:sendReport2" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendReport1Response">
+
+      <wsdl:part element="impl:sendReport1Response" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryReportResponse">
+
+      <wsdl:part element="impl:queryReportResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendReport1Request">
+
+      <wsdl:part element="impl:sendReport1" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendReport3Response">
+
+      <wsdl:part element="impl:sendReport3Response" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryReportRequest">
+
+      <wsdl:part element="impl:queryReport" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendReport3Request">
+
+      <wsdl:part element="impl:sendReport3" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SendReport">
+
+      <wsdl:operation name="queryReport">
+
+         <wsdl:input message="impl:queryReportRequest" name="queryReportRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:queryReportResponse" name="queryReportResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendReport1">
+
+         <wsdl:input message="impl:sendReport1Request" name="sendReport1Request">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sendReport1Response" name="sendReport1Response">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendReport2">
+
+         <wsdl:input message="impl:sendReport2Request" name="sendReport2Request">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sendReport2Response" name="sendReport2Response">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendReport3">
+
+         <wsdl:input message="impl:sendReport3Request" name="sendReport3Request">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sendReport3Response" name="sendReport3Response">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SendReportSoapBinding" type="impl:SendReport">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="queryReport">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="queryReportRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="queryReportResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendReport1">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sendReport1Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sendReport1Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendReport2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sendReport2Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sendReport2Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendReport3">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sendReport3Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sendReport3Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SendReportService">
+
+      <wsdl:port binding="impl:SendReportSoapBinding" name="SendReport">
+
+         <wsdlsoap:address location="http://localhost:8080/DB2WebService/services/SendReport"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

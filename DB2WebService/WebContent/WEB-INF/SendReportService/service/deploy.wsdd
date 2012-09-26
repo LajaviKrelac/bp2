@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from SendReportService WSDL service -->
+
+  <service name="SendReport" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service"/>
+      <parameter name="wsdlServiceElement" value="SendReportService"/>
+      <parameter name="schemaQualified" value="http://service"/>
+      <parameter name="wsdlServicePort" value="SendReport"/>
+      <parameter name="className" value="service.SendReport"/>
+      <parameter name="wsdlPortType" value="SendReport"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://service" xmlns:retNS="http://service" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="queryReport" qname="operNS:queryReport" returnQName="retNS:queryReportReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:predmet" type="tns:string"/>
+        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ocena" type="tns:int"/>
+        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:sifra" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://service" xmlns:retNS="http://service" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sendReport1" qname="operNS:sendReport1" returnQName="retNS:sendReport1Return" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:professorId" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://service" xmlns:retNS="http://service" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sendReport2" qname="operNS:sendReport2" returnQName="retNS:sendReport2Return" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:professorId" type="tns:int"/>
+        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:report" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://service" xmlns:retNS="http://service" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sendReport3" qname="operNS:sendReport3" returnQName="retNS:sendReport3Return" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:professorName" type="tns:string"/>
+        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:professorLastName" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="queryReport sendReport1 sendReport3 sendReport2"/>
+
+  </service>
+</deployment>

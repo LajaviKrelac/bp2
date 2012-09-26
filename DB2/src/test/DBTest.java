@@ -54,7 +54,7 @@ public class DBTest {
 	    
 	    
 	    String query =
-	            "for $x in doc('src/reportexample.xml') return $x";
+	            "for $x in doc('upload/reportexample.xml') return $x";
 	    
 	    RunQueries.query(query);
 	    
